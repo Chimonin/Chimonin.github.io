@@ -13,7 +13,7 @@
 <body class="bg-pink-100 text-black font-sans">
 
     <!-- Navegación con Botón Hamburguesa -->
-     <!--
+    <!--
     shadow md le agrega sombrita al borde
     sticky hace que la barra se mantenga ahi al scrollear
     top 0 hace que la barra se quede arriba
@@ -28,17 +28,17 @@
         items center ordena verticalmente para que esten a la misma altura todos los elementos
         -->
         <nav class=" p-4 flex justify-between items-center relative">
-            
+
             <!-- Título / Marca -->
-             <!--
+            <!--
             text lg hace que la letra sea un poco mas grande
             font bold que este en negrita
             uppercase mayusculas
             tracking wider agrega un pequeño espacio entre cada letra-->
-            <a href="#" class="text-lg font-bold uppercase tracking-wider">Aisleen Cerón</a>
+            <span class="text-lg font-bold uppercase tracking-wider">Aisleen Cerón</span>
 
             <!-- Botón Hamburguesa (Solo se muestra en celulares/tablets pequeñas) -->
-             <!--
+            <!--
             block indica que el boton se muestre
             lg hidden que lo esconda en pantallas grandes
             focus outline none que no le aplique borde al boton al cliquearse
@@ -56,7 +56,8 @@
                     stroke widht grosor de las lineas
                     d es la receta matematica que dibuja las 3 lineas
                     -->
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
                 </svg>
             </button>
 
@@ -83,8 +84,9 @@
             lg w auto hace que la caja ocupe solo un espacio necesario para los 3 elementos
             
             -->
-            <div id="menu" class="hidden absolute top-full right-0 w-1/2 bg-fuchsia-500 p-4 flex-col space-y-3 shadow-lg lg:static lg:flex lg:flex-row lg:w-auto lg:p-0 lg:space-y-0 lg:space-x-6 lg:shadow-none font-bold text-sm tracking-wider text-center">
-                
+            <div id="menu"
+                class="hidden absolute top-full right-0 w-1/2 bg-fuchsia-500 p-4 flex-col space-y-3 shadow-lg lg:static lg:flex lg:flex-row lg:w-auto lg:p-0 lg:space-y-0 lg:space-x-6 lg:shadow-none font-bold text-sm tracking-wider text-center">
+
                 <!--
                 hover le añade color al pasar por encima
                 transition le añade una pequeña animacion al pasar por encima
@@ -99,47 +101,98 @@
 
 
     <!--
-    max w 4xl le da un ancho maximo a la pantalla
-    p6 evita que el texto choque directamente contra los bordes de la pantalla
+    max w 4xl le da un ancho maximo al contenido
+    p6 evita que todo se quede pegado al lado izquierdo
     space y 12 añade espacio vertical entre los elementos hijos
     mx auto centra el contenido, divide el espacio de la pantalla en dos partes iguales
     -->
-    <main class="max-w-4xl mx-auto p-6 space-y-12">
+    <main id="Sobre_mi" class="max-w-4xl mx-auto p-6 space-y-12">
+
+        <!--sobre mi-->
+        <!-- bg white agrega un cuadrado blanco
+         flex activa el modo flexbox, que por defecto pone los elementos en horizontal
+         flex col define que en telefonos seran columna
+         lg flex row los muestra como fila en computadores
+         gap 6 separa los elementos 6 pixeles
+         justify center centra horizontalmente los elementos-->
+        <div
+            class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col lg:flex-row items-center justify-center gap-6">
+
+            <img src="https://i.pinimg.com/736x/2e/79/2b/2e792bf2201fe90235593e994c222dca.jpg"
+                class="w-40 h-40 rounded-full object-cover border-4 border-fuchsia-500 shrink-0"
+                alt="Foto de perfil de Aisleen Cerón">
+
+            <div class="text-center lg:text-left">
+                <h1 class="text-2xl font-bold text-black-600 mb-2">Sobre mí</h1>
+                <p class="text-gray-700">
+                    Estudiante de Ingeniería en Informática de DUOC UC en segundo año.
+                </p>
+            </div>
+
+        </div>
+
 
         <!-- Sección Educación / CV -->
 
         <!--
         border border gray 100 agrega un borde de 1 pixel-->
-        <section id="CV" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <section id="CV" class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
 
+            <h1 class="text-2xl font-bold mx-10 text-black mb-4 border-b pb-2">Educación</h1>
+
+            <!---->
+            <ol class="relative lg:ml-10">
+                <!--
+                    pb-8 le da espacio abajo, así el siguiente punto no queda pegado
+                    pl-8 empuja el texto a la derecha, dejando espacio para el punto y la línea
+                    border l 2 es borde a la izquierda de 2 pixeles
+                    -->
+                <li class="relative pb-8 pl-8 border-l-2 border-gray-300">
+
+                    <!--
+            absolute + -left-[9px] posiciona el círculo sobre la línea vertical
+            w-4 h-4 tamaño del punto
+            rounded-full lo hace circular
+            bg-fuchsia-500 el color relleno
+            -->
+                    <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-fuchsia-500 border-2 border-white"></span>
+                    <p class="text-sm font-bold text-fuchsia-600 mb-1">2025 - Actualidad</p>
+                    <p class="text-gray-700">Ingeniería en informática DUOC UC</p>
+                </li>
+
+                <li class="relative pb-8 pl-8 border-l-2 border-gray-300">
+
+                    <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-fuchsia-500 border-2 border-white"></span>
+                    <p class="text-sm font-bold text-fuchsia-600 mb-1">2019 - 2024</p>
+                    <p class="text-gray-700">Licenciatura en Ciencias Naturales y Matemáticas Universidad Católica (Incompleto).</p>
+                </li>
+
+                <li class="relative pb-8 pl-8 border-l-2 border-gray-300">
+
+                    <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-fuchsia-500 border-2 border-white"></span>
+                    <p class="text-sm font-bold text-fuchsia-600 mb-1">2007-2018</p>
+                    <p class="text-gray-700">Colegio San Francisco de Asís de La Florida.</p>
+                </li>
+
+            </ol>
             <!--
             border b crea una linea horizontal fina abajo del texto
             pb 2 crea un padding para que no este pegado al texto
             mb 4 añade un espacio entre el titulo y el texto, es un margen inferior, fuera del elemento
             -->
-            <h1 class="text-2xl font-bold text-indigo-600 mb-4 border-b pb-2">Educación</h1>
-
-            <!--
-            list disc hace que sean circulos rellenos las viñetas
-            list inside hace que si un texto ocupa dos lineas, la segunda linea comience justo debajo del punto
-            -->
-            <ul class="list-disc list-inside space-y-2 text-gray-700">
-                <li>Colegio San Francisco de Asís de La Florida.</li>
-                <li>Licenciatura en Ciencias Naturales y Matemáticas Universidad Católica (Incompleto).</li>
-                <li>Ingeniería en informática segundo año DUOC UC.</li>
-            </ul>
+            
         </section>
 
         <!-- Sección Portafolio -->
 
-        
+
         <section id="Portafolio" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
 
             <!--
             pb 2 padding bottom añade espacio dentro del elemento
             -->
-            <h1 class="text-2xl font-bold text-indigo-600 mb-4 border-b pb-2">Portafolio</h1>
-            
+            <h1 class="text-2xl font-bold text-indigo-600 mb-4 border-b pb-2 mx-10">Portafolio</h1>
+
 
             <!--
             grid activa el modo cuadricula
@@ -150,8 +203,8 @@
             p 0 quita el padding que se añade por defecto a la izquierda de las listas
 
             -->
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 list-none p-0">
-                
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 list-none p-0 lg:mx-10">
+
                 <!--
                 flex + flex col hace que todo se ordene verticalmente
                 items center centra horizontalmente los elementos
@@ -162,14 +215,14 @@
                     <!--
                     object cover evita que la foto se deforme o se estire-->
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHPaFI23qHnYL3o3aoAqro-rNF2eivIFtgXb0NRVKIfA&s=10"
-                         class="w-40 h-40 object-cover rounded-md mb-3 shadow-sm" alt="Catálogo de plantas">
+                        class="w-40 h-40 object-cover rounded-md mb-3 shadow-sm" alt="Catálogo de plantas">
                     <p class="text-gray-600">Catálogo de plantas</p>
                 </li>
 
                 <li class="border rounded-lg p-4 flex flex-col items-center text-center bg-gray-50">
                     <h2 class="text-lg font-semibold mb-3">Proyecto 2</h2>
-                    <img src="https://cdn-icons-png.flaticon.com/512/5521/5521112.png" 
-                         class="w-40 h-40 object-contain mb-3" alt="Aplicación móvil">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5521/5521112.png"
+                        class="w-40 h-40 object-contain mb-3" alt="Aplicación móvil">
                     <p class="text-gray-600">Aplicación móvil</p>
                 </li>
 
@@ -180,7 +233,8 @@
         <section id="Contacto" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
             <h1 class="text-2xl font-bold text-indigo-600 mb-4 border-b pb-2">Contacto</h1>
             <ul class="space-y-2 text-gray-700">
-                <li><strong class="font-medium">Correo:</strong> <a href="mailto:fernandaceron2000@gmail.com" class="text-indigo-600 underline hover:text-indigo-800">fernandaceron2000@gmail.com</a></li>
+                <li><strong class="font-medium">Correo:</strong> <a href="mailto:fernandaceron2000@gmail.com"
+                        class="text-indigo-600 underline hover:text-indigo-800">fernandaceron2000@gmail.com</a></li>
                 <li><strong class="font-medium">Teléfono:</strong> +56988904193</li>
             </ul>
         </section>
